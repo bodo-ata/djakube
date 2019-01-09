@@ -1,0 +1,37 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"djakube",
+      "labels":{
+         "app":"djakube"
+      }
+   },
+   "spec":{
+      "replicas":2,
+      "selector":{
+         "app":"djakube"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "app":"djakube"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"kube-poc-djakube",
+                  "image":"166325770976.dkr.ecr.eu-west-1.amazonaws.com/kube-poc-djakube:1",
+                  "ports":[
+                     {
+                        "name":"http-server",
+                        "containerPort":8000
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}
