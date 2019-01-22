@@ -49,7 +49,8 @@ VPC [sample1](https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2018-
 and for Worker nodes [sample2](https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2018-12-10/amazon-eks-nodegroup.yaml)
 and a few more resources to include all things needed).
 
-This setup will generate about $0.07/h extra costs. To clean up the setup, just remove all docker images from the ECR and delete the Cloud Formation stack at the end.
+This setup will generate about $0.25/h extra costs. To clean up the setup,
+just remove all docker images from the ECR, remove the AWS LoadBalancer created for the service (and its security group) and delete the Cloud Formation stack at the end.
 
 Check [AWS EKS optimized ami page](https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html)
 and identify the ami for your region (version 1.11).
